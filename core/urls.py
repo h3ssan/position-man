@@ -23,8 +23,7 @@ from django.views.static import serve
 from django.urls import re_path
 
 urlpatterns = [
-    path("admin/", admin.site.urls),
-    path("candidate/", include("apps.candidate.urls", namespace="candidate"))
+    
 ]
 
 # Static and media files settings for production
@@ -37,3 +36,10 @@ if not settings.DEBUG:
 else:
     urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Since the admin site's URL is not prefixed with 'admin/', we need to add it to the end of urlpatterns
+# After the static and media files settings This is to ensure that the admin site is accessible at the root URL
+
+urlpatterns += [
+    path("", admin.site.urls),
+]
