@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "apps.candidate.apps.CandidateConfig",
+    "apps.position.apps.PositionConfig",
 ]
 
 MIDDLEWARE = [
