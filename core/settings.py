@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 
     "apps.candidate.apps.CandidateConfig",
+    "apps.position.apps.PositionConfig",
 ]
 
 MIDDLEWARE = [
@@ -121,6 +122,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Media files (user-uploaded files)
+# https://docs.djangoproject.com/en/5.2/topics/files/
+
+MEDIA_URL = "uploads/"
+MEDIA_ROOT = BASE_DIR / "uploads"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
